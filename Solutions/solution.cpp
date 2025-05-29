@@ -23,6 +23,7 @@ void Solution::helper(std::string& s, int index, std::vector<std::string>& res) 
 
         s[index] = std::toupper(s[index]);
         helper(s, index + 1, res);
+        
     } else {
         helper(s, index + 1, res);
     }
