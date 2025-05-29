@@ -3,7 +3,7 @@
 #include <string>
 #include <algorithm>
 
-#include "../Solutions/solution.cpp"  // ✅ Proper include
+#include "../Solutions/solution.cpp"  // Make sure the path is correct and solution.cpp has no main()
 
 int main() {
     Solution sol;
@@ -37,4 +37,24 @@ int main() {
         std::cout << "Test Case " << (i + 1) << ": \"" << testInputs[i] << "\"\n";
         std::cout << "Expected: ";
         for (auto& e : expected) std::cout << e << " ";
-        std::cout << "\nActual:
+        std::cout << "\nActual: ";
+        for (auto& a : actual) std::cout << a << " ";
+        std::cout << "\n";
+
+        if (actual == expected) {
+            std::cout << "✅ Test Case " << (i + 1) << " Passed\n";
+        } else {
+            std::cout << "❌ Test Case " << (i + 1) << " Failed\n";
+            allPassed = false;
+        }
+        std::cout << "--------------------------\n";
+    }
+
+    if (!allPassed) {
+        std::cerr << "❌ Some test cases failed.\n";
+        return 1;
+    } else {
+        std::cout << "🎉 All test cases passed!\n";
+        return 0;
+    }
+}
