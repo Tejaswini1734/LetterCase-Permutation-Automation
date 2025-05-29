@@ -27,6 +27,7 @@ void Solution::helper(std::string& s, int index, std::vector<std::string>& res) 
     } else {
         helper(s, index + 1, res);
     }
+    
 }
 
 std::vector<std::string> Solution::letterCasePermutation(const std::string& s) {
