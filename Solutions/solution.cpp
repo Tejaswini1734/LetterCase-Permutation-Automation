@@ -3,7 +3,6 @@
 #include <string>
 #include <cctype>
 
-
 class Solution {
 public:
     std::vector<std::string> letterCasePermutation(const std::string& s);
