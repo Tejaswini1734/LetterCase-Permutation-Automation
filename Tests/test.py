@@ -1,22 +1,13 @@
 import sys
 import os
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../Solution')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../Solutions')))
 
 from solution import Solution
 
 def test():
     sol = Solution()
     test_inputs = [
-        "a1b",
-        "3z4",
-        "12345",
-        "0",
-        "A",
-        "ab",
-        "a1B2",
-        "C",
-        "c7D8e",
-        "Zz"
+        "a1b", "3z4", "12345", "0", "A", "ab", "a1B2", "C", "c7D8e", "Zz"
     ]
 
     expected_outputs = [

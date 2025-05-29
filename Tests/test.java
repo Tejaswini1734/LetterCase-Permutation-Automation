@@ -1,23 +1,15 @@
 package Tests;
 
-import Solutions.solution;
+import Solutions.solution;  // your solution class
+
 import java.util.*;
 
-public class test {
+public class Test {
     public static void main(String[] args) {
         solution sol = new solution();
 
         String[] testInputs = {
-            "a1b",
-            "3z4",
-            "12345",
-            "0",
-            "A",
-            "ab",
-            "a1B2",
-            "C",
-            "c7D8e",
-            "Zz"
+            "a1b", "3z4", "12345", "0", "A", "ab", "a1B2", "C", "c7D8e", "Zz"
         };
 
         String[][] expectedOutputs = {
