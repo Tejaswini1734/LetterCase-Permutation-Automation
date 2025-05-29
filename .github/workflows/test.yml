@@ -86,7 +86,7 @@ jobs:
           fi
           
           echo "Executing Python script: $PYTHON_FILE"
-          PYTHONPATH=Solutions python Tests/test.py
+          PYTHONPATH=Solutions python Tests/Test.py
 
       - name: Run Java Tests
         if: ${{ env.language == 'Java' }}
