@@ -2,6 +2,7 @@ package Solutions;
 
 import java.util.*;
 
+
 public class solution {
     public List<String> letterCasePermutation(String s) {
         List<String> res = new ArrayList<>();
