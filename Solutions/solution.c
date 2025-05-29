@@ -5,6 +5,7 @@
 
 void helper(char* s, int index, char*** res, int* returnSize, int* capacity);
 
+
 char** letterCasePermutation(char* s, int* returnSize) {
     int capacity = 100;  // Initial capacity for results
     char** res = (char**)malloc(capacity * sizeof(char*));
