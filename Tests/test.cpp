@@ -3,40 +3,7 @@
 #include <string>
 #include <algorithm>
 
-// Include the solution code here by forward declaring the class or
-// #include "../Solution/solution.cpp" if your setup allows that.
-
-class Solution {
-public:
-    std::vector<std::string> letterCasePermutation(const std::string& s);
-
-private:
-    void helper(std::string& s, int index, std::vector<std::string>& res);
-};
-
-void Solution::helper(std::string& s, int index, std::vector<std::string>& res) {
-    if (index == s.size()) {
-        res.push_back(s);
-        return;
-    }
-
-    if (std::isalpha(s[index])) {
-        s[index] = std::tolower(s[index]);
-        helper(s, index + 1, res);
-
-        s[index] = std::toupper(s[index]);
-        helper(s, index + 1, res);
-    } else {
-        helper(s, index + 1, res);
-    }
-}
-
-std::vector<std::string> Solution::letterCasePermutation(const std::string& s) {
-    std::vector<std::string> res;
-    std::string copy = s;
-    helper(copy, 0, res);
-    return res;
-}
+#include "../Solutions/solution.cpp"  // ✅ Proper include
 
 int main() {
     Solution sol;
@@ -70,24 +37,4 @@ int main() {
         std::cout << "Test Case " << (i + 1) << ": \"" << testInputs[i] << "\"\n";
         std::cout << "Expected: ";
         for (auto& e : expected) std::cout << e << " ";
-        std::cout << "\nActual:   ";
-        for (auto& a : actual) std::cout << a << " ";
-        std::cout << "\n";
-
-        if (actual == expected) {
-            std::cout << "✅ Test Case " << (i + 1) << " Passed\n";
-        } else {
-            std::cout << "❌ Test Case " << (i + 1) << " Failed\n";
-            allPassed = false;
-        }
-        std::cout << "--------------------------\n";
-    }
-
-    if (!allPassed) {
-        std::cerr << "❌ Some test cases failed.\n";
-        return 1;
-    } else {
-        std::cout << "🎉 All test cases passed!\n";
-        return 0;
-    }
-}
+        std::cout << "\nActual:
