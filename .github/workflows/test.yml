@@ -69,7 +69,7 @@ jobs:
         if: ${{ env.language == 'C++' }}
         run: |
           if [ -f Tests/test.cpp ]; then
-            g++ -I. Tests/test.cpp Solutions/*.cpp -o solution_cpp
+            g++ -I. tests/test.cpp Solutions/*.cpp -o solution_cpp
             ./solution_cpp
           else
             echo "No C++ test file found at Tests/test.cpp, skipping C++ test."
