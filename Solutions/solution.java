@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Solution {
     public List<String> letterCasePermutation(String s) {
+        
         List<String> res = new ArrayList<>();
         helper(s.toCharArray(), 0, res);
         return res;
