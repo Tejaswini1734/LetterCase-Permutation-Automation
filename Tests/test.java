@@ -1,8 +1,8 @@
-package tests;
+package Tests;
 
 import java.util.*;
 
-import solutions.Solution;
+import Solutions.Solution;
 
 public class Test {
     public static void main(String[] args) {
