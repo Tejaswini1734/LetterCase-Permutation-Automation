@@ -2,11 +2,11 @@ package Tests;
 
 import java.util.*;
 
-import Solutions.Solution;
+import Solutions.solution;
 
-public class Test {
+public class test {
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        solution sol = new solution();
 
         String[] testInputs = {
             "a1b", "3z4", "12345", "0", "A", "ab", "a1B2", "C", "c7D8e", "Zz"

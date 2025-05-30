@@ -2,7 +2,12 @@ package Solutions;
 
 import java.util.*;
 
+<<<<<<< HEAD
 public class Solution {
+=======
+
+public class solution {
+>>>>>>> 653a5bc (modified java file)
     public List<String> letterCasePermutation(String s) {
         
         List<String> res = new ArrayList<>();
