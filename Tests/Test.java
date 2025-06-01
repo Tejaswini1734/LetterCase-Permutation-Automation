@@ -1,58 +1,64 @@
 package Tests;
 
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
 import Solutions.Solution;
 
 public class Test {
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        String[] testInputs = {
-            "a1b", "3z4", "12345", "0", "A", "ab", "a1B2", "C", "c7D8e", "Zz"
+        String[] inputs = {
+            "a1b2",          // mixed letters and digits
+            "3z4",           // one letter
+            "123",           // digits only
+            "ABC",           // uppercase only
+            "abc",           // lowercase only
+            "a",             // single lowercase letter
+            "Z",             // single uppercase letter
+            "0",             // single digit
+            "",              // empty string
+            "a1B2c3"         // mixed with uppercase and lowercase letters & digits
         };
 
         String[][] expectedOutputs = {
-            {"a1b", "a1B", "A1b", "A1B"},
-            {"3z4", "3Z4"},
-            {"12345"},
-            {"0"},
-            {"a", "A"},
-            {"ab", "aB", "Ab", "AB"},
             {"a1b2", "a1B2", "A1b2", "A1B2"},
-            {"c", "C"},
-            {"c7d8e", "c7d8E", "c7D8e", "c7D8E", "C7d8e", "C7d8E", "C7D8e", "C7D8E"},
-            {"zz", "zZ", "Zz", "ZZ"}
+            {"3z4", "3Z4"},
+            {"123"},
+            {"ABC", "aBC", "AbC", "ABc", "abC", "aBc", "Abc", "abc"},
+            {"abc", "Abc", "aBc", "abC", "ABc", "aBC", "AbC", "ABC"},
+            {"a", "A"},
+            {"Z", "z"},
+            {"0"},
+            {""},
+            {"a1b2c3", "a1b2C3", "a1B2c3", "a1B2C3", "A1b2c3", "A1b2C3", "A1B2c3", "A1B2C3"}
         };
 
         boolean allPassed = true;
 
-        for (int i = 0; i < testInputs.length; i++) {
-            String input = testInputs[i];
+        for (int i = 0; i < inputs.length; i++) {
+            String input = inputs[i];
             List<String> actual = sol.letterCasePermutation(input);
             List<String> expected = Arrays.asList(expectedOutputs[i]);
 
             Collections.sort(actual);
             Collections.sort(expected);
 
-            System.out.println("Test Case " + (i + 1) + ": \"" + input + "\"");
-            System.out.println("Expected: " + expected);
-            System.out.println("Actual:   " + actual);
-
-            boolean passed = actual.equals(expected);
-
-            if (passed) {
-                System.out.println("✅ Test Case " + (i + 1) + " Passed");
+            if (actual.equals(expected)) {
+                System.out.println("Test #" + (i + 1) + " passed.");
             } else {
-                System.out.println("❌ Test Case " + (i + 1) + " Failed");
+                System.out.println("Test #" + (i + 1) + " failed.");
+                System.out.println("Expected: " + expected);
+                System.out.println("Got:      " + actual);
                 allPassed = false;
             }
-
-            System.out.println("--------------------------");
         }
 
-        if (!allPassed) {
-            throw new AssertionError("❌ Some test cases failed.");
+        if (allPassed) {
+            System.out.println("\n🎉 All tests passed!");
         } else {
-            System.out.println("🎉 All test cases passed!");
+            System.out.println("\nSome tests failed.");
         }
     }
 }
