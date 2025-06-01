@@ -90,8 +90,10 @@ jobs:
       - name: Run Java Tests
         if: ${{ env.language == 'Java' }}
         run: |
-          if [ -f Tests/test.java ]; then
-            javac -d . Solutions/*.java Tests/*.java && java Tests.Test
+          if [ -f Tests/Test.java ]; then
+            mkdir -p out
+            javac -d . Solutions/*.java Tests/*.java
+            java -cp out Tests.Test
           else
-            echo "Java test file not found at Tests/test.java, skipping Java test."
+            echo "Java test file not found at Tests/Test.java, skipping Java test."
           fi
