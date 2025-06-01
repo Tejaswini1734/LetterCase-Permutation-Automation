@@ -1,5 +1,10 @@
 package Solutions;
 
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+
 public class Solution {
     
     public List<String> letterCasePermutation(String s) {
