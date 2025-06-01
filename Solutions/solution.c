@@ -3,7 +3,6 @@
 #include <ctype.h>
 #include <string.h>
 
-
 void helper(char* s, int index, char*** res, int* returnSize, int* capacity);
 
 char** letterCasePermutation(char* s, int* returnSize) {
