@@ -1,6 +1,7 @@
 package Solutions;
 
 public class Solution {
+    
     public List<String> letterCasePermutation(String s) {
         List<String> result = new ArrayList<>();
         backtrack(s.toCharArray(), 0, result);
