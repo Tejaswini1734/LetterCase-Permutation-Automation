@@ -92,7 +92,7 @@ jobs:
         run: |
           if [ -f Tests/Test.java ]; then
             mkdir -p out
-            javac -d . Solutions/*.java Tests/*.java
+            javac -d out Solutions/*.java Tests/*.java
             java -cp out Tests.Test
           else
             echo "Java test file not found at Tests/Test.java, skipping Java test."
