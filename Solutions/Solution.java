@@ -11,7 +11,6 @@ public class Solution {
         List<String> result = new ArrayList<>();
         backtrack(s.toCharArray(), 0, result);
         return result;
-        
     }
 
     private void backtrack(char[] chars, int index, List<String> result) {
