@@ -1,6 +1,7 @@
 package Solutions;
 
 import java.util.List;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,10 +17,7 @@ public class Solution {
     private void backtrack(char[] chars, int index, List<String> result) {
         if (index == chars.length) {
             result.add(new String(chars));
-            return;
-        }
-
-        if (Character.isLetter(chars[index])) {
+            return;              
             // Lowercase branch
             chars[index] = Character.toLowerCase(chars[index]);
             backtrack(chars, index + 1, result);
